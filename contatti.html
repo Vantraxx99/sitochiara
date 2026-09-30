@@ -15,7 +15,7 @@
 </head>
 <body data-page="contatti">
 
-  <div class="curtain" aria-hidden="true"><span>Chiara Tangari</span></div>
+  <div class="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><span class="curtain-label">Contatti</span></div>
 
   <header class="site-header">
     <a class="logo" href="index.html"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span><span class="dot"></span></a>
@@ -32,10 +32,11 @@
   <main id="main">
 
     <section class="page-hero">
+      <canvas class="scene3d" data-scene="contact" aria-hidden="true"></canvas>
       <div class="gyro" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="container">
+      <div class="container" data-speed="0.15">
         <p class="eyebrow">Contatti</p>
-        <h1 class="page-title" data-split><span data-c="contatti.titolo">Parliamo</span></h1>
+        <h1 class="page-title" data-split data-fit><span data-c="contatti.titolo">Parliamo</span></h1>
         <p class="page-intro" data-c="contatti.testo"></p>
       </div>
     </section>
@@ -44,7 +45,7 @@
       <div class="container contact-grid">
         <div class="reveal">
           <p class="eyebrow">Scrivimi</p>
-          <a class="mail" href="mailto:" data-c-href="generale.email|mailto:"><span data-c="generale.email"></span></a>
+          <a class="mail" href="mailto:" data-c-href="generale.email|mailto:" data-fit><span data-c="generale.email"></span></a>
           <button class="copy" type="button" data-copy="generale.email">Copia indirizzo</button>
           <ul class="socials">
             <li><a href="#" data-c-href="generale.instagram" data-hide-empty target="_blank" rel="noopener">Instagram <span>↗</span></a></li>
@@ -61,7 +62,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-big" aria-hidden="true"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
+    <div class="footer-big" aria-hidden="true" data-fit><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
     <div class="footer-row container">
       <p>© <span class="year">2026</span> <span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></p>
       <nav aria-label="Menu secondario">
@@ -73,6 +74,8 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/scene3d.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@
 </head>
 <body data-page="chi-sono">
 
-  <div class="curtain" aria-hidden="true"><span>Chiara Tangari</span></div>
+  <div class="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><span class="curtain-label">Chi sono</span></div>
 
   <header class="site-header">
     <a class="logo" href="index.html"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span><span class="dot"></span></a>
@@ -32,10 +32,11 @@
   <main id="main">
 
     <section class="page-hero">
+      <canvas class="scene3d" data-scene="about" aria-hidden="true"></canvas>
       <div class="gyro" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="container">
+      <div class="container" data-speed="0.15">
         <p class="eyebrow"><span data-c="generale.ruolo">Event Manager &amp; Designer</span></p>
-        <h1 class="page-title" data-split>Chi sono</h1>
+        <h1 class="page-title" data-split data-fit>Chi sono</h1>
         
       </div>
     </section>
@@ -48,7 +49,7 @@
           <span class="portrait-tag" data-c="generale.citta">Monza</span>
         </div>
         <div class="about-text">
-          <p class="lead reveal" data-c="chi-sono.intro"></p>
+          <p class="lead" data-c="chi-sono.intro" data-words></p>
           <p class="reveal" data-c="chi-sono.testo"></p>
           <dl class="facts reveal">
             <div><dt>Formazione</dt><dd data-c="chi-sono.formazione"></dd></div>
@@ -63,7 +64,7 @@
       <div class="container split-2">
         <div class="reveal">
           <p class="eyebrow">Cosa faccio</p>
-          <h2>Competenze</h2>
+          <h2 data-words>Competenze</h2>
         </div>
         <ul class="services" data-list="cosa_faccio"></ul>
       </div>
@@ -81,14 +82,14 @@
     <section class="section cta-band">
       <div class="container reveal">
         <p class="eyebrow">Collaboriamo</p>
-        <h2 class="cta-title" data-c="home.cta_titolo">Hai un progetto in mente?</h2>
+        <h2 class="cta-title" data-c="home.cta_titolo" data-words>Hai un progetto in mente?</h2>
         <a class="btn" href="contatti.html">Scrivimi <span class="arr">→</span></a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-big" aria-hidden="true"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
+    <div class="footer-big" aria-hidden="true" data-fit><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
     <div class="footer-row container">
       <p>© <span class="year">2026</span> <span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></p>
       <nav aria-label="Menu secondario">
@@ -100,6 +101,8 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/scene3d.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

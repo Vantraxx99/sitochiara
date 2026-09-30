@@ -15,7 +15,7 @@
 </head>
 <body data-page="home">
 
-  <div class="curtain" aria-hidden="true"><span>Chiara Tangari</span></div>
+  <div class="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><span class="curtain-label">Chiara Tangari</span></div>
 
   <header class="site-header">
     <a class="logo" href="index.html"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span><span class="dot"></span></a>
@@ -32,10 +32,10 @@
   <main id="main">
 
     <section class="hero">
-      <canvas id="hero3d" aria-hidden="true"></canvas>
-      <div class="hero-inner container">
+      <canvas class="scene3d" data-scene="home" aria-hidden="true"></canvas>
+      <div class="hero-inner container" data-speed="0.25">
         <p class="eyebrow" data-c="home.eyebrow">Event Manager &amp; Designer</p>
-        <h1 class="hero-title">
+        <h1 class="hero-title" data-fit>
           <span class="line" data-c="generale.nome" data-split>Chiara</span>
           <span class="line outline" data-c="generale.cognome" data-split>Tangari</span>
         </h1>
@@ -57,19 +57,19 @@
         <div class="section-head reveal">
           <div>
             <p class="eyebrow">Esplora</p>
-            <h2>Da dove vuoi<br>iniziare?</h2>
+            <h2 data-words>Da dove vuoi iniziare?</h2>
           </div>
         </div>
         <div class="doors">
-          <a class="door door-about reveal" href="chi-sono.html" data-tilt>
+          <a class="door door-about reveal" href="chi-sono.html" data-tilt data-cursor="Scopri">
             <span class="door-arrow">↗</span>
             <span class="door-body"><strong>Chi sono</strong><span data-c="home.porta_chi_sono"></span></span>
           </a>
-          <a class="door door-grafica reveal" href="lavori.html#grafica" data-tilt>
+          <a class="door door-grafica reveal" href="lavori.html#grafica" data-tilt data-cursor="Guarda">
             <span class="door-arrow">↗</span>
             <span class="door-body"><strong>Grafica</strong><span data-c="home.porta_grafica"></span></span>
           </a>
-          <a class="door door-eventi reveal" href="lavori.html#eventi" data-tilt>
+          <a class="door door-eventi reveal" href="lavori.html#eventi" data-tilt data-cursor="Guarda">
             <span class="door-arrow">↗</span>
             <span class="door-body"><strong>Eventi</strong><span data-c="home.porta_eventi"></span></span>
           </a>
@@ -82,7 +82,7 @@
         <div class="section-head reveal">
           <div>
             <p class="eyebrow">In evidenza</p>
-            <h2>Lavori recenti</h2>
+            <h2 data-words>Lavori recenti</h2>
           </div>
           <a class="link-arrow" href="lavori.html">Tutti i lavori <span>→</span></a>
         </div>
@@ -93,14 +93,14 @@
     <section class="section cta-band">
       <div class="container reveal">
         <p class="eyebrow">Collaboriamo</p>
-        <h2 class="cta-title" data-c="home.cta_titolo">Hai un progetto in mente?</h2>
+        <h2 class="cta-title" data-c="home.cta_titolo" data-words>Hai un progetto in mente?</h2>
         <a class="btn" href="contatti.html">Scrivimi <span class="arr">→</span></a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-big" aria-hidden="true"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
+    <div class="footer-big" aria-hidden="true" data-fit><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
     <div class="footer-row container">
       <p>© <span class="year">2026</span> <span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></p>
       <nav aria-label="Menu secondario">
@@ -113,7 +113,7 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="js/hero3d.js"></script>
+  <script src="js/scene3d.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

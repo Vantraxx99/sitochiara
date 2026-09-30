@@ -15,7 +15,7 @@
 </head>
 <body data-page="lavori">
 
-  <div class="curtain" aria-hidden="true"><span>Chiara Tangari</span></div>
+  <div class="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><span class="curtain-label">Lavori</span></div>
 
   <header class="site-header">
     <a class="logo" href="index.html"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span><span class="dot"></span></a>
@@ -32,10 +32,11 @@
   <main id="main">
 
     <section class="page-hero">
+      <canvas class="scene3d" data-scene="works" aria-hidden="true"></canvas>
       <div class="cube-wrap" aria-hidden="true"><div class="cube"><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
-      <div class="container">
+      <div class="container" data-speed="0.15">
         <p class="eyebrow">Portfolio</p>
-        <h1 class="page-title" data-split>Lavori</h1>
+        <h1 class="page-title" data-split data-fit>Lavori</h1>
         <p class="page-intro" data-c="lavori.intro"></p>
       </div>
     </section>
@@ -75,7 +76,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-big" aria-hidden="true"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
+    <div class="footer-big" aria-hidden="true" data-fit><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
     <div class="footer-row container">
       <p>© <span class="year">2026</span> <span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></p>
       <nav aria-label="Menu secondario">
@@ -87,6 +88,8 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/scene3d.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

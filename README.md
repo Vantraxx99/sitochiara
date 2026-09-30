@@ -28,5 +28,5 @@ Ogni salvataggio dall'editor aggiorna il sito in circa un minuto.
 ## Struttura
 - `css/style.css`: stile (colori e font nelle variabili all'inizio)
 - `js/main.js`: caricamento dei contenuti, animazioni, filtri, galleria, transizioni
-- `js/hero3d.js`: scena 3D della home (Three.js)
+- `js/scene3d.js`: scene 3D di tutte le pagine (Three.js)
 - `docs/`: CV in PDF

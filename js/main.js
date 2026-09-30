@@ -56,7 +56,7 @@
     fill('featured', feat.slice(0, 3).map((w) => {
       const i = works.indexOf(w);
       return `<a class="feat reveal" href="lavori.html#${esc(w.categoria)}">
-        <span class="feat-media" data-tilt>${media(photos(w)[0], w.titolo, i)}</span>
+        <span class="feat-media" data-tilt data-cursor="Guarda">${media(photos(w)[0], w.titolo, i)}</span>
         <span class="feat-cap"><strong>${esc(w.titolo)}</strong><span>${esc(CATS[w.categoria] || '')}${w.dettaglio ? ' · ' + esc(w.dettaglio) : ''}</span></span>
       </a>`;
     }).join(''));
@@ -72,7 +72,7 @@
       const ph_ = photos(w);
       const imgs = ph_.length ? ph_.map((p, k) => media(p, `${w.titolo} — foto ${k + 1}`, i)).join('') : ph(i);
       return `<figure class="work reveal" data-cat="${esc(w.categoria)}" data-index="${i}">
-        <button class="work-open" type="button" data-tilt aria-label="Apri ${esc(w.titolo)}">
+        <button class="work-open" type="button" data-tilt data-cursor="Apri" aria-label="Apri ${esc(w.titolo)}">
           <span class="work-images">${imgs}</span>
           ${ph_.length > 1 ? `<span class="badge">${ph_.length} foto</span>` : ''}
           <span class="work-hover"><span>Apri</span></span>
@@ -124,10 +124,52 @@
     $$('[data-split]', root).forEach((el) => { el.classList.remove('split-play'); void el.offsetWidth; el.classList.add('split-play'); });
   };
 
+  function words(el) {
+    if (el.dataset.wordsDone) return;
+    el.dataset.wordsDone = '1';
+    const text = el.textContent.trim().replace(/\s+/g, ' ');
+    el.setAttribute('aria-label', text);
+    el.innerHTML = text.split(' ').map((w, i) => `<span class="w" aria-hidden="true"><span class="wi" style="--i:${i}">${esc(w)}</span></span>`).join(' ');
+  }
+
+  /* ---------------- TITOLI GRANDI CHE STANNO SEMPRE NELLO SCHERMO ---------------- */
+  function fitTitles() {
+    $$('[data-fit]').forEach((el) => {
+      if (el.offsetParent === null) return;
+      el.style.fontSize = '';
+      const cs = getComputedStyle(el);
+      const box = cs.display.startsWith('inline') ? el.parentElement : el;
+      const bcs = getComputedStyle(box);
+      const avail = box.clientWidth - parseFloat(bcs.paddingLeft) - parseFloat(bcs.paddingRight);
+      const lines = $$('.line', el);
+      let widest = 0;
+      (lines.length ? lines : [el]).forEach((line) => {
+        const probe = document.createElement('span');
+        probe.textContent = (line.getAttribute('aria-label') || line.textContent).trim();
+        probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;left:0;top:0;';
+        const lcs = getComputedStyle(line);
+        probe.style.font = lcs.font;
+        probe.style.letterSpacing = lcs.letterSpacing;
+        el.appendChild(probe);
+        widest = Math.max(widest, probe.getBoundingClientRect().width);
+        probe.remove();
+      });
+      if (widest > avail && avail > 0) el.style.fontSize = (parseFloat(cs.fontSize) * avail / widest * 0.97).toFixed(1) + 'px';
+    });
+  }
+  CT.fitTitles = fitTitles;
+  let fitTimer;
+  addEventListener('resize', () => { clearTimeout(fitTimer); fitTimer = setTimeout(fitTitles, 120); });
+  if (document.fonts) {
+    document.fonts.ready.then(fitTitles);
+    document.fonts.addEventListener && document.fonts.addEventListener('loadingdone', fitTitles);
+  }
+  addEventListener('load', fitTitles);
+
   /* ---------------- COMPARSA ALLO SCROLL ---------------- */
   let revObs = null;
   function observeReveals() {
-    const items = $$('.reveal:not(.in)');
+    const items = $$('.reveal:not(.in), [data-words]:not(.in)');
     if (!('IntersectionObserver' in window) || reduce) { items.forEach((el) => el.classList.add('in')); return; }
     revObs = revObs || new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); revObs.unobserve(e.target); } });
@@ -156,6 +198,63 @@
     document.addEventListener('pointerleave', () => cur && reset(cur));
   }
 
+  /* ---------------- SCROLL: PROGRESSO, PARALLASSE, NASTRO ---------------- */
+  function initScrollFx() {
+    if (reduce) return;
+    const bar = document.createElement('div');
+    bar.className = 'progress';
+    document.body.appendChild(bar);
+    let lastY = scrollY, vel = 0, ticking = false;
+    const update = () => {
+      ticking = false;
+      const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.setProperty('--p', max > 0 ? (y / max).toFixed(4) : 0);
+      $$('[data-speed]').forEach((el) => {
+        if (el.offsetParent === null) return;
+        const s = parseFloat(el.dataset.speed) || 0;
+        el.style.translate = y < innerHeight * 1.2 ? `0 ${(y * s).toFixed(1)}px` : '';
+        el.style.opacity = y < innerHeight ? Math.max(0, 1 - y / (innerHeight * 0.85)).toFixed(3) : 0;
+      });
+      vel = vel * 0.8 + (y - lastY) * 0.2;
+      lastY = y;
+    };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+    // il nastro accelera e si inclina seguendo la velocità dello scroll
+    (function marqueeLoop() {
+      vel *= 0.92;
+      $$('.marquee').forEach((m) => {
+        const anim = $('.marquee-track', m).getAnimations && $('.marquee-track', m).getAnimations()[0];
+        if (anim) anim.playbackRate = 1 + Math.min(Math.abs(vel) * 0.12, 5);
+        m.style.setProperty('--skew', Math.max(-8, Math.min(8, -vel * 0.25)).toFixed(2) + 'deg');
+      });
+      requestAnimationFrame(marqueeLoop);
+    })();
+  }
+  CT.resetScrollFx = () => $$('[data-speed]').forEach((el) => { el.style.translate = ''; el.style.opacity = ''; });
+
+  /* ---------------- PULSANTI MAGNETICI E TITOLO 3D ---------------- */
+  function initMagnets() {
+    if (!fine || reduce) return;
+    let cur = null;
+    document.addEventListener('pointermove', (e) => {
+      const el = e.target.closest ? e.target.closest('.btn') : null;
+      if (cur && cur !== el) { cur.classList.remove('magnet'); cur.style.setProperty('--tx', '0px'); cur.style.setProperty('--ty', '0px'); }
+      cur = el;
+      if (el) {
+        const r = el.getBoundingClientRect();
+        el.classList.add('magnet');
+        el.style.setProperty('--tx', ((e.clientX - r.left - r.width / 2) * 0.3).toFixed(1) + 'px');
+        el.style.setProperty('--ty', ((e.clientY - r.top - r.height / 2) * 0.4).toFixed(1) + 'px');
+      }
+      const title = $('.hero-title');
+      if (title && title.offsetParent !== null) {
+        title.style.setProperty('--hx', ((e.clientX / innerWidth - 0.5) * 10).toFixed(2) + 'deg');
+        title.style.setProperty('--hy', ((0.5 - e.clientY / innerHeight) * 8).toFixed(2) + 'deg');
+      }
+    }, { passive: true });
+  }
+
   /* ---------------- CURSORE ---------------- */
   function initCursor() {
     if (!fine || reduce) return;
@@ -164,7 +263,12 @@
     document.body.append(dot, ring);
     let mx = -100, my = -100, rx = mx, ry = my;
     addEventListener('pointermove', (e) => { mx = e.clientX; my = e.clientY; dot.style.transform = `translate(${mx}px,${my}px)`; }, { passive: true });
-    document.addEventListener('pointerover', (e) => ring.classList.toggle('hover', !!e.target.closest('a,button,[data-tilt]')));
+    document.addEventListener('pointerover', (e) => {
+      const lab = e.target.closest('[data-cursor]');
+      ring.classList.toggle('label', !!lab);
+      ring.dataset.label = lab ? lab.dataset.cursor : '';
+      ring.classList.toggle('hover', !lab && !!e.target.closest('a,button,[data-tilt]'));
+    });
     (function loop() {
       rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
       ring.style.transform = `translate(${rx}px,${ry}px)`;
@@ -204,6 +308,8 @@
   };
   addEventListener('pageshow', (e) => { if (e.persisted) CT.curtainOut(); });
 
+  const LABELS = { home: 'Chiara Tangari', 'chi-sono': 'Chi sono', lavori: 'Lavori', contatti: 'Contatti' };
+  const label = curtain && $('.curtain-label', curtain);
   const go = (href) => (window.SPA ? window.SPA.go(href) : (location.href = href));
   document.addEventListener('click', (e) => {
     const a = e.target.closest('a[href]');
@@ -220,8 +326,11 @@
       return;
     }
     if (reduce || !curtain) return go(href);
+    if (label) label.textContent = LABELS[PAGES[m[1]]] || '';
+    curtain.classList.remove('enter');
+    void curtain.offsetWidth;
     curtain.classList.add('enter');
-    setTimeout(() => go(href), 620);
+    setTimeout(() => go(href), 850);
   });
 
   /* ---------------- LAVORI: FILTRI ---------------- */
@@ -344,6 +453,8 @@
   /* ---------------- AVVIO ---------------- */
   initTilt();
   initCursor();
+  initMagnets();
+  initScrollFx();
   Promise.all(FILES.map(load)).then((vals) => {
     const C = {};
     FILES.forEach((f, i) => (C[f] = vals[i] || {}));
@@ -351,6 +462,8 @@
     bind(C);
     render(C);
     $$('[data-split]').forEach(split);
+    $$('[data-words]').forEach(words);
+    fitTitles();
     CT.replaySplit();
     initWorks();
     initCopy();
