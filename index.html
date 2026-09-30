@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chiara Tangari — Portfolio</title>
-  <meta name="description" content="Portfolio e curriculum di Chiara Tangari: progetti, lavori e percorso artistico e professionale.">
+  <meta name="description" content="Portfolio di Chiara Tangari: progetti di grafica ed eventi.">
   <meta property="og:title" content="Chiara Tangari — Portfolio">
   <meta property="og:description" content="Progetti, lavori e percorso artistico e professionale.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,6 @@
     <nav class="nav" aria-label="Menu principale">
       <a href="#chi-sono">Chi sono</a>
       <a href="#lavori">Lavori</a>
-      <a href="#curriculum">Curriculum</a>
       <a href="#contatti">Contatti</a>
     </nav>
   </header>
@@ -57,6 +56,9 @@
           <p>Sono Chiara, e mi occupo di <strong>[la tua professione]</strong>. Questo spazio è pensato per raccontare in poche righe chi sei, cosa ti appassiona e cosa rende unico il tuo modo di lavorare.</p>
           <p>Qui puoi aggiungere un secondo paragrafo con il tuo percorso, le tue influenze e ciò che cerchi nei nuovi progetti e nelle collaborazioni.</p>
 
+          <!-- MODIFICA: metti il PDF del CV nella cartella "docs" con questo nome -->
+          <a class="btn btn-ghost download" href="docs/CV-Chiara-Tangari.pdf" download>Scarica il CV (PDF)</a>
+
           <h3 class="mini-title">Cosa faccio</h3>
           <ul class="skills">
             <li><span>01</span> Disciplina o servizio principale</li>
@@ -77,127 +79,91 @@
         <!-- MODIFICA: categorie (il valore data-filter deve coincidere con data-cat dei lavori) -->
         <div class="filters reveal" role="group" aria-label="Filtra i lavori">
           <button class="active" data-filter="all">Tutti</button>
-          <button data-filter="arte">Arte</button>
-          <button data-filter="progetti">Progetti</button>
-          <button data-filter="collaborazioni">Collaborazioni</button>
+          <button data-filter="grafica">Grafica</button>
+          <button data-filter="eventi">Eventi</button>
         </div>
 
         <!--
           COME AGGIUNGERE UN LAVORO: copia un blocco <figure class="work"> e cambia:
-            data-cat   → categoria (arte / progetti / collaborazioni)
-            data-full  → percorso della foto grande (es. img/lavori/nome.jpg)
-            <img>      → la foto (al posto del <div class="placeholder">)
-            title/desc → titolo, anno e breve descrizione
+            data-cat   → grafica oppure eventi
+            data-title / data-meta / data-desc → titolo, anno·dettaglio, descrizione
+            <span class="work-images"> → una riga per ogni foto:
+                <img src="img/lavori/nome-1.jpg" alt="descrizione">
+              (la prima foto è la copertina; sostituisce i <div class="placeholder">)
+            <span class="badge"> → scrivi quante foto ci sono
         -->
         <div class="grid">
-          <figure class="work reveal" data-cat="arte" data-title="Titolo opera 1" data-meta="2025 · Tecnica" data-desc="Breve descrizione del lavoro, del contesto e dell'idea.">
-            <button class="work-open" aria-label="Apri: Titolo opera 1">
-              <div class="placeholder ph-1"></div>
+          <figure class="work reveal" data-cat="grafica" data-title="Progetto grafico 1" data-meta="2025 · Identità visiva" data-desc="Breve descrizione del progetto grafico: cliente, idea e risultato.">
+            <button class="work-open" aria-label="Apri: Progetto grafico 1">
+              <span class="work-images">
+                <div class="placeholder ph-1"></div>
+                <div class="placeholder ph-3"></div>
+                <div class="placeholder ph-5"></div>
+                <div class="placeholder ph-2"></div>
+              </span>
+              <span class="badge">4 foto</span>
             </button>
-            <figcaption><strong>Titolo opera 1</strong><span>2025 · Tecnica</span></figcaption>
+            <figcaption><strong>Progetto grafico 1</strong><span>2025 · Identità visiva</span></figcaption>
           </figure>
 
-          <figure class="work reveal tall" data-cat="progetti" data-title="Titolo progetto 2" data-meta="2024 · Cliente" data-desc="Breve descrizione del progetto, del tuo ruolo e del risultato ottenuto.">
-            <button class="work-open" aria-label="Apri: Titolo progetto 2">
-              <div class="placeholder ph-2"></div>
+          <figure class="work reveal tall" data-cat="eventi" data-title="Evento 1" data-meta="2025 · Luogo" data-desc="Breve descrizione dell'evento: dove, quando e qual è stato il tuo ruolo.">
+            <button class="work-open" aria-label="Apri: Evento 1">
+              <span class="work-images">
+                <div class="placeholder ph-2"></div>
+                <div class="placeholder ph-4"></div>
+                <div class="placeholder ph-6"></div>
+              </span>
+              <span class="badge">3 foto</span>
             </button>
-            <figcaption><strong>Titolo progetto 2</strong><span>2024 · Cliente</span></figcaption>
+            <figcaption><strong>Evento 1</strong><span>2025 · Luogo</span></figcaption>
           </figure>
 
-          <figure class="work reveal" data-cat="arte" data-title="Titolo opera 3" data-meta="2024 · Tecnica" data-desc="Breve descrizione del lavoro, del contesto e dell'idea.">
-            <button class="work-open" aria-label="Apri: Titolo opera 3">
-              <div class="placeholder ph-3"></div>
+          <figure class="work reveal" data-cat="grafica" data-title="Progetto grafico 2" data-meta="2024 · Packaging" data-desc="Breve descrizione del progetto grafico: cliente, idea e risultato.">
+            <button class="work-open" aria-label="Apri: Progetto grafico 2">
+              <span class="work-images">
+                <div class="placeholder ph-3"></div>
+                <div class="placeholder ph-1"></div>
+              </span>
+              <span class="badge">2 foto</span>
             </button>
-            <figcaption><strong>Titolo opera 3</strong><span>2024 · Tecnica</span></figcaption>
+            <figcaption><strong>Progetto grafico 2</strong><span>2024 · Packaging</span></figcaption>
           </figure>
 
-          <figure class="work reveal" data-cat="collaborazioni" data-title="Collaborazione 4" data-meta="2023 · Con chi" data-desc="Racconta la collaborazione: con chi, dove e cosa avete realizzato.">
-            <button class="work-open" aria-label="Apri: Collaborazione 4">
-              <div class="placeholder ph-4"></div>
+          <figure class="work reveal" data-cat="eventi" data-title="Evento 2" data-meta="2024 · Luogo" data-desc="Breve descrizione dell'evento: dove, quando e qual è stato il tuo ruolo.">
+            <button class="work-open" aria-label="Apri: Evento 2">
+              <span class="work-images">
+                <div class="placeholder ph-4"></div>
+                <div class="placeholder ph-2"></div>
+                <div class="placeholder ph-5"></div>
+                <div class="placeholder ph-1"></div>
+                <div class="placeholder ph-3"></div>
+              </span>
+              <span class="badge">5 foto</span>
             </button>
-            <figcaption><strong>Collaborazione 4</strong><span>2023 · Con chi</span></figcaption>
+            <figcaption><strong>Evento 2</strong><span>2024 · Luogo</span></figcaption>
           </figure>
 
-          <figure class="work reveal tall" data-cat="arte" data-title="Titolo opera 5" data-meta="2022 · Tecnica" data-desc="Breve descrizione del lavoro, del contesto e dell'idea.">
-            <button class="work-open" aria-label="Apri: Titolo opera 5">
-              <div class="placeholder ph-5"></div>
+          <figure class="work reveal tall" data-cat="grafica" data-title="Progetto grafico 3" data-meta="2023 · Editoria" data-desc="Breve descrizione del progetto grafico: cliente, idea e risultato.">
+            <button class="work-open" aria-label="Apri: Progetto grafico 3">
+              <span class="work-images">
+                <div class="placeholder ph-5"></div>
+                <div class="placeholder ph-6"></div>
+                <div class="placeholder ph-4"></div>
+              </span>
+              <span class="badge">3 foto</span>
             </button>
-            <figcaption><strong>Titolo opera 5</strong><span>2022 · Tecnica</span></figcaption>
+            <figcaption><strong>Progetto grafico 3</strong><span>2023 · Editoria</span></figcaption>
           </figure>
 
-          <figure class="work reveal" data-cat="progetti" data-title="Titolo progetto 6" data-meta="2022 · Cliente" data-desc="Breve descrizione del progetto, del tuo ruolo e del risultato ottenuto.">
-            <button class="work-open" aria-label="Apri: Titolo progetto 6">
-              <div class="placeholder ph-6"></div>
+          <figure class="work reveal" data-cat="eventi" data-title="Evento 3" data-meta="2023 · Luogo" data-desc="Breve descrizione dell'evento: dove, quando e qual è stato il tuo ruolo.">
+            <button class="work-open" aria-label="Apri: Evento 3">
+              <span class="work-images">
+                <div class="placeholder ph-6"></div>
+              </span>
+              <span class="badge">1 foto</span>
             </button>
-            <figcaption><strong>Titolo progetto 6</strong><span>2022 · Cliente</span></figcaption>
+            <figcaption><strong>Evento 3</strong><span>2023 · Luogo</span></figcaption>
           </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CURRICULUM ============ -->
-    <section class="section cv" id="curriculum">
-      <div class="container">
-        <p class="eyebrow reveal">Percorso</p>
-        <h2 class="reveal">Curriculum</h2>
-
-        <div class="cv-grid">
-          <div class="reveal">
-            <h3 class="cv-title">Esperienze</h3>
-            <ol class="timeline">
-              <li>
-                <span class="years">2023 — oggi</span>
-                <h4>Ruolo o attività</h4>
-                <p class="where">Studio / Azienda / Luogo</p>
-                <p>Due righe su cosa fai o hai fatto e sui risultati principali.</p>
-              </li>
-              <li>
-                <span class="years">2020 — 2023</span>
-                <h4>Ruolo o attività</h4>
-                <p class="where">Studio / Azienda / Luogo</p>
-                <p>Due righe su cosa fai o hai fatto e sui risultati principali.</p>
-              </li>
-              <li>
-                <span class="years">2018 — 2020</span>
-                <h4>Ruolo o attività</h4>
-                <p class="where">Studio / Azienda / Luogo</p>
-                <p>Due righe su cosa fai o hai fatto e sui risultati principali.</p>
-              </li>
-            </ol>
-          </div>
-
-          <div class="reveal">
-            <h3 class="cv-title">Formazione</h3>
-            <ol class="timeline">
-              <li>
-                <span class="years">2014 — 2018</span>
-                <h4>Titolo di studio</h4>
-                <p class="where">Università / Accademia</p>
-              </li>
-              <li>
-                <span class="years">2009 — 2014</span>
-                <h4>Diploma</h4>
-                <p class="where">Istituto</p>
-              </li>
-            </ol>
-
-            <h3 class="cv-title">Mostre e riconoscimenti</h3>
-            <ol class="timeline">
-              <li>
-                <span class="years">2024</span>
-                <h4>Mostra / premio</h4>
-                <p class="where">Luogo o ente</p>
-              </li>
-            </ol>
-
-            <h3 class="cv-title">Competenze e strumenti</h3>
-            <ul class="tags">
-              <li>Competenza</li><li>Competenza</li><li>Software</li><li>Software</li><li>Lingue: italiano, inglese</li>
-            </ul>
-
-            <!-- MODIFICA: metti il PDF del CV in cartella "docs" con questo nome -->
-            <a class="btn btn-ghost download" href="docs/CV-Chiara-Tangari.pdf" download>Scarica il CV (PDF)</a>
-          </div>
         </div>
       </div>
     </section>
@@ -233,6 +199,11 @@
         <h3 class="lb-title"></h3>
         <p class="lb-meta"></p>
         <p class="lb-desc"></p>
+        <div class="lb-thumbs"></div>
+        <div class="lb-works">
+          <button class="lb-wprev">← Lavoro precedente</button>
+          <button class="lb-wnext">Lavoro successivo →</button>
+        </div>
       </div>
     </div>
     <button class="lb-nav lb-next" aria-label="Successivo">›</button>

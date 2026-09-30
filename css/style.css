@@ -12,6 +12,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 body {
   margin: 0; background: var(--bg); color: var(--text);
@@ -124,31 +125,20 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 1.5rem; }
 .grid { columns: 3 300px; column-gap: 1.5rem; }
 .work { margin: 0 0 1.5rem; break-inside: avoid; }
 .work.hidden { display: none; }
-.work-open { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; overflow: hidden; }
+.work-open { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; overflow: hidden; }
 .work-open .placeholder, .work-open img { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
 .work:hover .work-open .placeholder, .work:hover .work-open img { transform: scale(1.05); }
 .work.tall .placeholder { aspect-ratio: 3 / 4; }
 .work figcaption { display: flex; justify-content: space-between; gap: 1rem; padding-top: .7rem; font-size: .92rem; }
 .work figcaption span { color: var(--muted); font-size: .85rem; }
 
-/* ============ CV ============ */
-.cv { background: var(--bg-alt); }
-.cv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 2rem; }
-.cv-title { font-size: 1.6rem; font-style: italic; margin: 0 0 1.2rem; }
-.cv-grid > div > .cv-title:not(:first-child) { margin-top: 3rem; }
-.timeline { list-style: none; padding: 0 0 0 1.5rem; margin: 0; border-left: 1px solid var(--line); }
-.timeline li { position: relative; padding-bottom: 2rem; }
-.timeline li::before {
-  content: ""; position: absolute; left: calc(-1.5rem - 4.5px); top: .55rem;
-  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+.work-images { display: block; }
+.work-images > :not(:first-child) { display: none; }
+.badge {
+  position: absolute; right: .7rem; bottom: .7rem; padding: .2rem .7rem;
+  background: rgba(28,24,21,.72); color: #fff; font-size: .72rem; letter-spacing: .08em;
 }
-.years { font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
-.timeline h4 { font-size: 1.4rem; margin: .2rem 0; }
-.timeline p { margin: 0; }
-.where { color: var(--muted); font-size: .95rem; }
-.timeline li p:last-child:not(.where) { margin-top: .4rem; font-size: .97rem; }
-.tags { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0 0 2.5rem; }
-.tags li { border: 1px solid var(--line); padding: .3rem .9rem; font-size: .88rem; background: var(--bg); }
+.download { margin-top: 1.6rem; }
 
 /* ============ CONTATTI ============ */
 .contact { text-align: center; }
@@ -190,6 +180,17 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 1.5rem; }
 .lb-prev { left: .5rem; }
 .lb-next { right: .5rem; }
 
+.lb-thumbs { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1rem; }
+.lb-thumbs button {
+  width: 64px; height: 48px; padding: 0; border: 2px solid transparent; cursor: pointer;
+  background: none; opacity: .55; overflow: hidden;
+}
+.lb-thumbs button.active, .lb-thumbs button:hover { opacity: 1; border-color: var(--accent); }
+.lb-thumbs .placeholder, .lb-thumbs img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+.lb-works { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.15); }
+.lb-works button { background: none; border: 0; color: #b9aea3; cursor: pointer; font-size: .85rem; padding: 0; }
+.lb-works button:hover { color: #fff; }
+
 /* ============ ANIMAZIONI ============ */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s ease; }
 .reveal.in { opacity: 1; transform: none; }
@@ -211,7 +212,8 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 1.5rem; }
   }
   .nav.open { transform: none; }
   .nav a { padding: 1rem 1.5rem; font-size: .95rem; }
-  .two-col, .cv-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .two-col { grid-template-columns: 1fr; gap: 3rem; }
   .portrait { max-width: 380px; }
-  .lb-nav { top: auto; bottom: .5rem; }
+  .lb-nav { top: 35%; }
+  .lb-body { width: 88vw; }
 }

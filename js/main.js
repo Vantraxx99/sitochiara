@@ -55,28 +55,46 @@
     });
   });
 
-  /* Lightbox */
-  var lb = $('#lightbox'), current = 0, lastFocus = null;
+  /* Lightbox: frecce = foto dello stesso lavoro, link in basso = altro lavoro */
+  var lb = $('#lightbox'), cw = 0, ci = 0, lastFocus = null;
   var visible = function () { return works.filter(function (w) { return !w.classList.contains('hidden'); }); };
+  var imagesOf = function (w) { return $$('.work-images > *', w); };
 
-  function show(i) {
-    var list = visible();
-    if (!list.length) return;
-    current = (i + list.length) % list.length;
-    var w = list[current];
-    var media = $('.work-open', w).firstElementChild.cloneNode(true);
-    media.classList.remove('reveal');
+  function showImage(i) {
+    var imgs = imagesOf(visible()[cw]);
+    ci = (i + imgs.length) % imgs.length;
+    var el = imgs[ci].cloneNode(true);
     var box = $('.lb-media', lb);
     box.innerHTML = '';
-    if (w.dataset.full && media.tagName === 'IMG') media.src = w.dataset.full;
-    box.appendChild(media);
+    box.appendChild(el);
+    $$('.lb-thumbs button', lb).forEach(function (b, k) { b.classList.toggle('active', k === ci); });
+  }
+  function showWork(i) {
+    var list = visible();
+    if (!list.length) return;
+    cw = (i + list.length) % list.length;
+    var w = list[cw], imgs = imagesOf(w);
     $('.lb-title', lb).textContent = w.dataset.title || '';
     $('.lb-meta', lb).textContent = w.dataset.meta || '';
     $('.lb-desc', lb).textContent = w.dataset.desc || '';
+    var thumbs = $('.lb-thumbs', lb);
+    thumbs.innerHTML = '';
+    if (imgs.length > 1) {
+      imgs.forEach(function (im, k) {
+        var b = document.createElement('button');
+        b.setAttribute('aria-label', 'Foto ' + (k + 1));
+        b.appendChild(im.cloneNode(true));
+        b.addEventListener('click', function () { showImage(k); });
+        thumbs.appendChild(b);
+      });
+    }
+    $$('.lb-prev, .lb-next', lb).forEach(function (b) { b.hidden = imgs.length < 2; });
+    $('.lb-works', lb).hidden = list.length < 2;
+    showImage(0);
   }
   function open(i) {
     lastFocus = document.activeElement;
-    show(i);
+    showWork(i);
     lb.classList.add('open');
     lb.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -93,13 +111,15 @@
     $('.work-open', w).addEventListener('click', function () { open(visible().indexOf(w)); });
   });
   $('.lb-close', lb).addEventListener('click', close);
-  $('.lb-prev', lb).addEventListener('click', function () { show(current - 1); });
-  $('.lb-next', lb).addEventListener('click', function () { show(current + 1); });
+  $('.lb-prev', lb).addEventListener('click', function () { showImage(ci - 1); });
+  $('.lb-next', lb).addEventListener('click', function () { showImage(ci + 1); });
+  $('.lb-wprev', lb).addEventListener('click', function () { showWork(cw - 1); });
+  $('.lb-wnext', lb).addEventListener('click', function () { showWork(cw + 1); });
   lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
   document.addEventListener('keydown', function (e) {
     if (!lb.classList.contains('open')) return;
     if (e.key === 'Escape') close();
-    if (e.key === 'ArrowLeft') show(current - 1);
-    if (e.key === 'ArrowRight') show(current + 1);
+    if (e.key === 'ArrowLeft') showImage(ci - 1);
+    if (e.key === 'ArrowRight') showImage(ci + 1);
   });
 })();
