@@ -1,6 +1,6 @@
 {
   "eyebrow": "Event Manager & Designer · Monza",
-  "sottotitolo": "Progetto e coordino eventi in Italia e all'estero, e curo la grafica che li racconta: identità visive, materiali, allestimenti.",
+  "presentazione": "Progetto e coordino eventi in Italia e all'estero, e curo la grafica che li racconta: identità visive, materiali, allestimenti.",
   "nastro": [
     "Eventi",
     "Identità visive",
@@ -9,8 +9,6 @@
     "Set design",
     "Comunicazione"
   ],
-  "porta_chi_sono": "La mia storia, cosa faccio e il mio CV.",
   "porta_grafica": "Identità visive, stampa, presentazioni.",
-  "porta_eventi": "Organizzazione, logistica, coordinamento.",
-  "cta_titolo": "Hai un progetto in mente?"
+  "porta_eventi": "Organizzazione, logistica, coordinamento."
 }

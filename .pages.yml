@@ -28,12 +28,10 @@ content:
     format: json
     fields:
       - { name: eyebrow, label: Scritta piccola sopra il nome, type: string }
-      - { name: sottotitolo, label: Frase di presentazione, type: text }
+      - { name: presentazione, label: "Breve presentazione (sezione «Chi sono» della home)", type: text }
       - { name: nastro, label: Parole del nastro scorrevole, type: string, list: true }
-      - { name: porta_chi_sono, label: "Riquadro «Chi sono» — descrizione", type: string }
       - { name: porta_grafica, label: "Riquadro «Grafica» — descrizione", type: string }
       - { name: porta_eventi, label: "Riquadro «Eventi» — descrizione", type: string }
-      - { name: cta_titolo, label: Titolo dell'invito a contattarti, type: string }
 
   - name: chi-sono
     label: Chi sono
@@ -82,7 +80,6 @@ content:
           - { name: dettaglio, label: "Cliente / luogo", type: string }
           - { name: descrizione, label: Descrizione, type: text }
           - { name: foto, label: "Foto (la prima è la copertina)", type: image, list: true }
-          - { name: in_evidenza, label: Mostra in home, type: boolean }
 
   - name: contatti
     label: Contatti

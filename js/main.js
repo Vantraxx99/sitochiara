@@ -51,15 +51,6 @@
     // Home
     const words = (H.nastro || []).map((w, i) => `<span${i % 2 ? ' class="outline"' : ''}>${esc(w)}</span><i>✦</i>`).join('');
     fill('nastro', words + words);
-    let feat = works.filter((w) => w.in_evidenza);
-    if (!feat.length) feat = works;
-    fill('featured', feat.slice(0, 3).map((w) => {
-      const i = works.indexOf(w);
-      return `<a class="feat reveal" href="lavori.html#${esc(w.categoria)}">
-        <span class="feat-media" data-tilt data-cursor="Guarda">${media(photos(w)[0], w.titolo, i)}</span>
-        <span class="feat-cap"><strong>${esc(w.titolo)}</strong><span>${esc(CATS[w.categoria] || '')}${w.dettaglio ? ' · ' + esc(w.dettaglio) : ''}</span></span>
-      </a>`;
-    }).join(''));
 
     // Chi sono
     fill('ritratto', A.foto ? media(A.foto, `Ritratto di ${G.nome || ''} ${G.cognome || ''}`, 0) : '<span class="placeholder ph-portrait"></span>');
@@ -209,27 +200,35 @@
       ticking = false;
       const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
       bar.style.setProperty('--p', max > 0 ? (y / max).toFixed(4) : 0);
-      $$('[data-speed]').forEach((el) => {
+      if (fine && innerWidth > 900) $$('[data-speed]').forEach((el) => {
         if (el.offsetParent === null) return;
         const s = parseFloat(el.dataset.speed) || 0;
         el.style.translate = y < innerHeight * 1.2 ? `0 ${(y * s).toFixed(1)}px` : '';
         el.style.opacity = y < innerHeight ? Math.max(0, 1 - y / (innerHeight * 0.85)).toFixed(3) : 0;
       });
-      vel = vel * 0.8 + (y - lastY) * 0.2;
+      vel = vel * 0.6 + (y - lastY) * 0.4;
       lastY = y;
     };
     addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
     update();
-    // il nastro accelera e si inclina seguendo la velocità dello scroll
-    (function marqueeLoop() {
-      vel *= 0.92;
-      $$('.marquee').forEach((m) => {
-        const anim = $('.marquee-track', m).getAnimations && $('.marquee-track', m).getAnimations()[0];
-        if (anim) anim.playbackRate = 1 + Math.min(Math.abs(vel) * 0.12, 5);
-        m.style.setProperty('--skew', Math.max(-8, Math.min(8, -vel * 0.25)).toFixed(2) + 'deg');
+    // il nastro scorre sempre; accelera e si inclina seguendo la velocità dello scroll
+    const tracks = $$('.marquee-track').map((el) => ({ el, x: 0 }));
+    let last = performance.now();
+    (function marqueeLoop(now) {
+      const dt = Math.min((now - last) / 1000, 0.1);
+      last = now;
+      vel *= 0.9;
+      const boost = Math.min(Math.abs(vel) * 0.35, 12);
+      tracks.forEach((t) => {
+        const half = t.el.scrollWidth / 2;
+        if (!half || t.el.offsetParent === null) return;
+        t.x -= (60 + boost * 60) * dt;
+        if (-t.x >= half) t.x += half;
+        t.el.style.transform = `translate3d(${t.x.toFixed(1)}px,0,0)`;
+        t.el.parentElement.style.setProperty('--skew', Math.max(-6, Math.min(6, -vel * 0.2)).toFixed(2) + 'deg');
       });
       requestAnimationFrame(marqueeLoop);
-    })();
+    })(last);
   }
   CT.resetScrollFx = () => $$('[data-speed]').forEach((el) => { el.style.translate = ''; el.style.opacity = ''; });
 
