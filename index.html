@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chiara Tangari — Portfolio</title>
+  <meta name="description" content="Portfolio e curriculum di Chiara Tangari: progetti, lavori e percorso artistico e professionale.">
+  <meta property="og:title" content="Chiara Tangari — Portfolio">
+  <meta property="og:description" content="Progetti, lavori e percorso artistico e professionale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAVIGAZIONE ============ -->
+  <header class="site-header" id="top">
+    <a class="logo" href="#top">Chiara Tangari</a>
+    <button class="nav-toggle" aria-label="Apri il menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" aria-label="Menu principale">
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#lavori">Lavori</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <p class="eyebrow reveal">Portfolio</p>
+      <h1 class="reveal">Chiara <em>Tangari</em></h1>
+      <!-- MODIFICA: scrivi qui la professione / una frase che la descrive -->
+      <p class="hero-sub reveal">Artista e creativa — trasformo idee in immagini, storie ed esperienze.</p>
+      <div class="hero-cta reveal">
+        <a class="btn" href="#lavori">Guarda i lavori</a>
+        <a class="btn btn-ghost" href="#contatti">Contattami</a>
+      </div>
+      <a class="scroll-hint" href="#chi-sono" aria-label="Scorri">↓</a>
+    </section>
+
+    <!-- ============ CHI SONO ============ -->
+    <section class="section about" id="chi-sono">
+      <div class="container two-col">
+        <div class="portrait reveal">
+          <!-- MODIFICA: sostituisci con la foto di Chiara:
+               <img src="img/chiara.jpg" alt="Ritratto di Chiara Tangari"> -->
+          <div class="placeholder" role="img" aria-label="Foto di Chiara (da inserire)"><span>Foto</span></div>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">Chi sono</p>
+          <h2>Una breve presentazione</h2>
+          <p>Sono Chiara, e mi occupo di <strong>[la tua professione]</strong>. Questo spazio è pensato per raccontare in poche righe chi sei, cosa ti appassiona e cosa rende unico il tuo modo di lavorare.</p>
+          <p>Qui puoi aggiungere un secondo paragrafo con il tuo percorso, le tue influenze e ciò che cerchi nei nuovi progetti e nelle collaborazioni.</p>
+
+          <h3 class="mini-title">Cosa faccio</h3>
+          <ul class="skills">
+            <li><span>01</span> Disciplina o servizio principale</li>
+            <li><span>02</span> Seconda competenza</li>
+            <li><span>03</span> Terza competenza</li>
+            <li><span>04</span> Quarta competenza</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LAVORI ============ -->
+    <section class="section works" id="lavori">
+      <div class="container">
+        <p class="eyebrow reveal">Selezione</p>
+        <h2 class="reveal">Lavori</h2>
+
+        <!-- MODIFICA: categorie (il valore data-filter deve coincidere con data-cat dei lavori) -->
+        <div class="filters reveal" role="group" aria-label="Filtra i lavori">
+          <button class="active" data-filter="all">Tutti</button>
+          <button data-filter="arte">Arte</button>
+          <button data-filter="progetti">Progetti</button>
+          <button data-filter="collaborazioni">Collaborazioni</button>
+        </div>
+
+        <!--
+          COME AGGIUNGERE UN LAVORO: copia un blocco <figure class="work"> e cambia:
+            data-cat   → categoria (arte / progetti / collaborazioni)
+            data-full  → percorso della foto grande (es. img/lavori/nome.jpg)
+            <img>      → la foto (al posto del <div class="placeholder">)
+            title/desc → titolo, anno e breve descrizione
+        -->
+        <div class="grid">
+          <figure class="work reveal" data-cat="arte" data-title="Titolo opera 1" data-meta="2025 · Tecnica" data-desc="Breve descrizione del lavoro, del contesto e dell'idea.">
+            <button class="work-open" aria-label="Apri: Titolo opera 1">
+              <div class="placeholder ph-1"></div>
+            </button>
+            <figcaption><strong>Titolo opera 1</strong><span>2025 · Tecnica</span></figcaption>
+          </figure>
+
+          <figure class="work reveal tall" data-cat="progetti" data-title="Titolo progetto 2" data-meta="2024 · Cliente" data-desc="Breve descrizione del progetto, del tuo ruolo e del risultato ottenuto.">
+            <button class="work-open" aria-label="Apri: Titolo progetto 2">
+              <div class="placeholder ph-2"></div>
+            </button>
+            <figcaption><strong>Titolo progetto 2</strong><span>2024 · Cliente</span></figcaption>
+          </figure>
+
+          <figure class="work reveal" data-cat="arte" data-title="Titolo opera 3" data-meta="2024 · Tecnica" data-desc="Breve descrizione del lavoro, del contesto e dell'idea.">
+            <button class="work-open" aria-label="Apri: Titolo opera 3">
+              <div class="placeholder ph-3"></div>
+            </button>
+            <figcaption><strong>Titolo opera 3</strong><span>2024 · Tecnica</span></figcaption>
+          </figure>
+
+          <figure class="work reveal" data-cat="collaborazioni" data-title="Collaborazione 4" data-meta="2023 · Con chi" data-desc="Racconta la collaborazione: con chi, dove e cosa avete realizzato.">
+            <button class="work-open" aria-label="Apri: Collaborazione 4">
+              <div class="placeholder ph-4"></div>
+            </button>
+            <figcaption><strong>Collaborazione 4</strong><span>2023 · Con chi</span></figcaption>
+          </figure>
+
+          <figure class="work reveal tall" data-cat="arte" data-title="Titolo opera 5" data-meta="2022 · Tecnica" data-desc="Breve descrizione del lavoro, del contesto e dell'idea.">
+            <button class="work-open" aria-label="Apri: Titolo opera 5">
+              <div class="placeholder ph-5"></div>
+            </button>
+            <figcaption><strong>Titolo opera 5</strong><span>2022 · Tecnica</span></figcaption>
+          </figure>
+
+          <figure class="work reveal" data-cat="progetti" data-title="Titolo progetto 6" data-meta="2022 · Cliente" data-desc="Breve descrizione del progetto, del tuo ruolo e del risultato ottenuto.">
+            <button class="work-open" aria-label="Apri: Titolo progetto 6">
+              <div class="placeholder ph-6"></div>
+            </button>
+            <figcaption><strong>Titolo progetto 6</strong><span>2022 · Cliente</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CURRICULUM ============ -->
+    <section class="section cv" id="curriculum">
+      <div class="container">
+        <p class="eyebrow reveal">Percorso</p>
+        <h2 class="reveal">Curriculum</h2>
+
+        <div class="cv-grid">
+          <div class="reveal">
+            <h3 class="cv-title">Esperienze</h3>
+            <ol class="timeline">
+              <li>
+                <span class="years">2023 — oggi</span>
+                <h4>Ruolo o attività</h4>
+                <p class="where">Studio / Azienda / Luogo</p>
+                <p>Due righe su cosa fai o hai fatto e sui risultati principali.</p>
+              </li>
+              <li>
+                <span class="years">2020 — 2023</span>
+                <h4>Ruolo o attività</h4>
+                <p class="where">Studio / Azienda / Luogo</p>
+                <p>Due righe su cosa fai o hai fatto e sui risultati principali.</p>
+              </li>
+              <li>
+                <span class="years">2018 — 2020</span>
+                <h4>Ruolo o attività</h4>
+                <p class="where">Studio / Azienda / Luogo</p>
+                <p>Due righe su cosa fai o hai fatto e sui risultati principali.</p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="reveal">
+            <h3 class="cv-title">Formazione</h3>
+            <ol class="timeline">
+              <li>
+                <span class="years">2014 — 2018</span>
+                <h4>Titolo di studio</h4>
+                <p class="where">Università / Accademia</p>
+              </li>
+              <li>
+                <span class="years">2009 — 2014</span>
+                <h4>Diploma</h4>
+                <p class="where">Istituto</p>
+              </li>
+            </ol>
+
+            <h3 class="cv-title">Mostre e riconoscimenti</h3>
+            <ol class="timeline">
+              <li>
+                <span class="years">2024</span>
+                <h4>Mostra / premio</h4>
+                <p class="where">Luogo o ente</p>
+              </li>
+            </ol>
+
+            <h3 class="cv-title">Competenze e strumenti</h3>
+            <ul class="tags">
+              <li>Competenza</li><li>Competenza</li><li>Software</li><li>Software</li><li>Lingue: italiano, inglese</li>
+            </ul>
+
+            <!-- MODIFICA: metti il PDF del CV in cartella "docs" con questo nome -->
+            <a class="btn btn-ghost download" href="docs/CV-Chiara-Tangari.pdf" download>Scarica il CV (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATTI ============ -->
+    <section class="section contact" id="contatti">
+      <div class="container narrow">
+        <p class="eyebrow reveal">Contatti</p>
+        <h2 class="reveal">Lavoriamo insieme</h2>
+        <p class="reveal">Hai un progetto in mente o vuoi semplicemente salutare? Scrivimi.</p>
+        <!-- MODIFICA: email e social -->
+        <a class="mail reveal" href="mailto:email@esempio.it">email@esempio.it</a>
+        <p class="socials reveal">
+          <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> Chiara Tangari — Tutti i diritti riservati</p>
+    <a href="#top">Torna su ↑</a>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lb-close" aria-label="Chiudi">×</button>
+    <button class="lb-nav lb-prev" aria-label="Precedente">‹</button>
+    <div class="lb-body">
+      <div class="lb-media"></div>
+      <div class="lb-info">
+        <h3 class="lb-title"></h3>
+        <p class="lb-meta"></p>
+        <p class="lb-desc"></p>
+      </div>
+    </div>
+    <button class="lb-nav lb-next" aria-label="Successivo">›</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
