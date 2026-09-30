@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi sono — Chiara Tangari</title>
+  <meta name="description" content="Chi è Chiara Tangari: percorso, competenze e CV.">
+  <meta property="og:title" content="Chi sono — Chiara Tangari">
+  <meta property="og:description" content="Chi è Chiara Tangari: percorso, competenze e CV.">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="chi-sono">
+
+  <div class="curtain" aria-hidden="true"><span>Chiara Tangari</span></div>
+
+  <header class="site-header">
+    <a class="logo" href="index.html"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span><span class="dot"></span></a>
+    <button class="nav-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" aria-label="Menu principale">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="chi-sono.html" data-nav="chi-sono">Chi sono</a>
+      <a href="lavori.html" data-nav="lavori">Lavori</a>
+      <a href="contatti.html" data-nav="contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <!-- I testi e le foto si modificano dall'area admin (file in /content), non qui. -->
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="gyro" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container">
+        <p class="eyebrow"><span data-c="generale.ruolo">Event Manager &amp; Designer</span></p>
+        <h1 class="page-title" data-split>Chi sono</h1>
+        
+      </div>
+    </section>
+
+    <section class="section about-section">
+      <div class="container about">
+        <div class="portrait reveal" data-tilt>
+          <span class="portrait-frame"></span>
+          <span class="portrait-img" data-list="ritratto"></span>
+          <span class="portrait-tag" data-c="generale.citta">Monza</span>
+        </div>
+        <div class="about-text">
+          <p class="lead reveal" data-c="chi-sono.intro"></p>
+          <p class="reveal" data-c="chi-sono.testo"></p>
+          <dl class="facts reveal">
+            <div><dt>Formazione</dt><dd data-c="chi-sono.formazione"></dd></div>
+            <div><dt>Lingue</dt><dd data-c="chi-sono.lingue"></dd></div>
+          </dl>
+          <a class="btn reveal" href="docs/CV-Chiara-Tangari.pdf" data-c-href="generale.cv" download>Scarica il CV <span class="arr">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container split-2">
+        <div class="reveal">
+          <p class="eyebrow">Cosa faccio</p>
+          <h2>Competenze</h2>
+        </div>
+        <ul class="services" data-list="cosa_faccio"></ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow reveal">Ho lavorato con</p>
+        <ul class="clients" data-list="clienti"></ul>
+        <p class="eyebrow reveal tools-label">Strumenti</p>
+        <ul class="tags" data-list="strumenti"></ul>
+      </div>
+    </section>
+
+    <section class="section cta-band">
+      <div class="container reveal">
+        <p class="eyebrow">Collaboriamo</p>
+        <h2 class="cta-title" data-c="home.cta_titolo">Hai un progetto in mente?</h2>
+        <a class="btn" href="contatti.html">Scrivimi <span class="arr">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-big" aria-hidden="true"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
+    <div class="footer-row container">
+      <p>© <span class="year">2026</span> <span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></p>
+      <nav aria-label="Menu secondario">
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="lavori.html">Lavori</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="#" class="to-top">Torna su ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

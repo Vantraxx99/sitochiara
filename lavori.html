@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lavori — Chiara Tangari</title>
+  <meta name="description" content="Eventi e progetti grafici di Chiara Tangari.">
+  <meta property="og:title" content="Lavori — Chiara Tangari">
+  <meta property="og:description" content="Eventi e progetti grafici di Chiara Tangari.">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="lavori">
+
+  <div class="curtain" aria-hidden="true"><span>Chiara Tangari</span></div>
+
+  <header class="site-header">
+    <a class="logo" href="index.html"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span><span class="dot"></span></a>
+    <button class="nav-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" aria-label="Menu principale">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="chi-sono.html" data-nav="chi-sono">Chi sono</a>
+      <a href="lavori.html" data-nav="lavori">Lavori</a>
+      <a href="contatti.html" data-nav="contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <!-- I testi e le foto si modificano dall'area admin (file in /content), non qui. -->
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="cube-wrap" aria-hidden="true"><div class="cube"><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+      <div class="container">
+        <p class="eyebrow">Portfolio</p>
+        <h1 class="page-title" data-split>Lavori</h1>
+        <p class="page-intro" data-c="lavori.intro"></p>
+      </div>
+    </section>
+
+    <section class="section works-section">
+      <div class="container">
+        <div class="works-bar">
+          <div class="filters" role="group" aria-label="Filtra i lavori">
+            <button class="active" data-filter="all">Tutti</button>
+            <button data-filter="grafica">Grafica</button>
+            <button data-filter="eventi">Eventi</button>
+          </div>
+          <p class="works-count" aria-live="polite"></p>
+        </div>
+        <div class="grid" data-list="lavori"></div>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Foto del lavoro">
+      <button class="lb-close" aria-label="Chiudi">×</button>
+      <button class="lb-nav lb-prev" aria-label="Foto precedente">‹</button>
+      <div class="lb-body">
+        <div class="lb-media"></div>
+        <div class="lb-info">
+          <p class="lb-meta"></p>
+          <h3 class="lb-title"></h3>
+          <p class="lb-desc"></p>
+          <div class="lb-thumbs"></div>
+          <div class="lb-works">
+            <button class="lb-wprev">← Lavoro precedente</button>
+            <button class="lb-wnext">Lavoro successivo →</button>
+          </div>
+        </div>
+      </div>
+      <button class="lb-nav lb-next" aria-label="Foto successiva">›</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-big" aria-hidden="true"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
+    <div class="footer-row container">
+      <p>© <span class="year">2026</span> <span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></p>
+      <nav aria-label="Menu secondario">
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="lavori.html">Lavori</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="#" class="to-top">Torna su ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

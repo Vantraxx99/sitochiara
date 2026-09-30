@@ -1,0 +1,95 @@
+# Configurazione dell'area di modifica (Pages CMS — https://app.pagescms.org)
+# Ogni voce qui sotto diventa una pagina di modulo nell'editor.
+
+media:
+  input: img/uploads
+  output: img/uploads
+
+content:
+  - name: generale
+    label: Informazioni generali
+    type: file
+    path: content/generale.json
+    format: json
+    fields:
+      - { name: nome, label: Nome, type: string, required: true }
+      - { name: cognome, label: Cognome, type: string, required: true }
+      - { name: ruolo, label: "Ruolo (es. Event Manager & Designer)", type: string }
+      - { name: citta, label: Città, type: string }
+      - { name: email, label: Email, type: string }
+      - { name: instagram, label: "Link Instagram (lascia vuoto per nasconderlo)", type: string }
+      - { name: linkedin, label: "Link LinkedIn (lascia vuoto per nasconderlo)", type: string }
+      - { name: cv, label: "CV da scaricare (PDF)", type: file }
+
+  - name: home
+    label: Home
+    type: file
+    path: content/home.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Scritta piccola sopra il nome, type: string }
+      - { name: sottotitolo, label: Frase di presentazione, type: text }
+      - { name: nastro, label: Parole del nastro scorrevole, type: string, list: true }
+      - { name: porta_chi_sono, label: "Riquadro «Chi sono» — descrizione", type: string }
+      - { name: porta_grafica, label: "Riquadro «Grafica» — descrizione", type: string }
+      - { name: porta_eventi, label: "Riquadro «Eventi» — descrizione", type: string }
+      - { name: cta_titolo, label: Titolo dell'invito a contattarti, type: string }
+
+  - name: chi-sono
+    label: Chi sono
+    type: file
+    path: content/chi-sono.json
+    format: json
+    fields:
+      - { name: foto, label: La tua foto, type: image }
+      - { name: intro, label: Presentazione (in evidenza), type: text }
+      - { name: testo, label: Presentazione (seguito), type: text }
+      - { name: formazione, label: Formazione, type: string }
+      - { name: lingue, label: Lingue, type: string }
+      - name: cosa_faccio
+        label: Cosa faccio
+        type: object
+        list: true
+        fields:
+          - { name: titolo, label: Competenza, type: string }
+          - name: area
+            label: Area
+            type: select
+            options:
+              values: [Eventi, Grafica, Comunicazione]
+      - { name: clienti, label: Aziende con cui hai lavorato, type: string, list: true }
+      - { name: strumenti, label: Strumenti e software, type: string, list: true }
+
+  - name: lavori
+    label: Lavori
+    type: file
+    path: content/lavori.json
+    format: json
+    fields:
+      - { name: intro, label: Testo introduttivo, type: text }
+      - name: lavori
+        label: Lavori (trascinali per cambiare l'ordine)
+        type: object
+        list: true
+        fields:
+          - { name: titolo, label: Titolo, type: string, required: true }
+          - name: categoria
+            label: Sezione
+            type: select
+            options:
+              values: [grafica, eventi]
+          - { name: anno, label: Anno, type: string }
+          - { name: dettaglio, label: "Cliente / luogo", type: string }
+          - { name: descrizione, label: Descrizione, type: text }
+          - { name: foto, label: "Foto (la prima è la copertina)", type: image, list: true }
+          - { name: in_evidenza, label: Mostra in home, type: boolean }
+
+  - name: contatti
+    label: Contatti
+    type: file
+    path: content/contatti.json
+    format: json
+    fields:
+      - { name: titolo, label: Titolo, type: string }
+      - { name: testo, label: Testo, type: text }
+      - { name: disponibile_per, label: Disponibile per, type: string, list: true }

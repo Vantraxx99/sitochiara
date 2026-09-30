@@ -3,212 +3,117 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chiara Tangari — Portfolio</title>
-  <meta name="description" content="Portfolio di Chiara Tangari: progetti di grafica ed eventi.">
-  <meta property="og:title" content="Chiara Tangari — Portfolio">
-  <meta property="og:description" content="Progetti, lavori e percorso artistico e professionale.">
+  <title>Chiara Tangari — Event Manager & Designer</title>
+  <meta name="description" content="Portfolio di Chiara Tangari, event manager e designer: eventi e progetti grafici.">
+  <meta property="og:title" content="Chiara Tangari — Event Manager & Designer">
+  <meta property="og:description" content="Portfolio di Chiara Tangari, event manager e designer: eventi e progetti grafici.">
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="home">
 
-  <!-- ============ NAVIGAZIONE ============ -->
-  <header class="site-header" id="top">
-    <a class="logo" href="#top">Chiara Tangari</a>
-    <button class="nav-toggle" aria-label="Apri il menu" aria-expanded="false">
-      <span></span><span></span>
-    </button>
+  <div class="curtain" aria-hidden="true"><span>Chiara Tangari</span></div>
+
+  <header class="site-header">
+    <a class="logo" href="index.html"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span><span class="dot"></span></a>
+    <button class="nav-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span></button>
     <nav class="nav" aria-label="Menu principale">
-      <a href="#chi-sono">Chi sono</a>
-      <a href="#lavori">Lavori</a>
-      <a href="#contatti">Contatti</a>
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="chi-sono.html" data-nav="chi-sono">Chi sono</a>
+      <a href="lavori.html" data-nav="lavori">Lavori</a>
+      <a href="contatti.html" data-nav="contatti">Contatti</a>
     </nav>
   </header>
 
-  <main>
+  <!-- I testi e le foto si modificano dall'area admin (file in /content), non qui. -->
+  <main id="main">
 
-    <!-- ============ HERO ============ -->
     <section class="hero">
-      <p class="eyebrow reveal">Portfolio</p>
-      <h1 class="reveal">Chiara <em>Tangari</em></h1>
-      <!-- MODIFICA: scrivi qui la professione / una frase che la descrive -->
-      <p class="hero-sub reveal">Artista e creativa — trasformo idee in immagini, storie ed esperienze.</p>
-      <div class="hero-cta reveal">
-        <a class="btn" href="#lavori">Guarda i lavori</a>
-        <a class="btn btn-ghost" href="#contatti">Contattami</a>
-      </div>
-      <a class="scroll-hint" href="#chi-sono" aria-label="Scorri">↓</a>
-    </section>
-
-    <!-- ============ CHI SONO ============ -->
-    <section class="section about" id="chi-sono">
-      <div class="container two-col">
-        <div class="portrait reveal">
-          <!-- MODIFICA: sostituisci con la foto di Chiara:
-               <img src="img/chiara.jpg" alt="Ritratto di Chiara Tangari"> -->
-          <div class="placeholder" role="img" aria-label="Foto di Chiara (da inserire)"><span>Foto</span></div>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">Chi sono</p>
-          <h2>Una breve presentazione</h2>
-          <p>Sono Chiara, e mi occupo di <strong>[la tua professione]</strong>. Questo spazio è pensato per raccontare in poche righe chi sei, cosa ti appassiona e cosa rende unico il tuo modo di lavorare.</p>
-          <p>Qui puoi aggiungere un secondo paragrafo con il tuo percorso, le tue influenze e ciò che cerchi nei nuovi progetti e nelle collaborazioni.</p>
-
-          <!-- MODIFICA: metti il PDF del CV nella cartella "docs" con questo nome -->
-          <a class="btn btn-ghost download" href="docs/CV-Chiara-Tangari.pdf" download>Scarica il CV (PDF)</a>
-
-          <h3 class="mini-title">Cosa faccio</h3>
-          <ul class="skills">
-            <li><span>01</span> Disciplina o servizio principale</li>
-            <li><span>02</span> Seconda competenza</li>
-            <li><span>03</span> Terza competenza</li>
-            <li><span>04</span> Quarta competenza</li>
-          </ul>
+      <canvas id="hero3d" aria-hidden="true"></canvas>
+      <div class="hero-inner container">
+        <p class="eyebrow" data-c="home.eyebrow">Event Manager &amp; Designer</p>
+        <h1 class="hero-title">
+          <span class="line" data-c="generale.nome" data-split>Chiara</span>
+          <span class="line outline" data-c="generale.cognome" data-split>Tangari</span>
+        </h1>
+        <div class="hero-bottom">
+          <p class="hero-sub" data-c="home.sottotitolo"></p>
+          <div class="hero-cta">
+            <a class="btn" href="lavori.html">Guarda i lavori <span class="arr">→</span></a>
+            <a class="btn btn-ghost" href="contatti.html">Contattami</a>
+          </div>
         </div>
       </div>
+      <div class="scroll-cue" aria-hidden="true"><span></span>Scorri</div>
     </section>
 
-    <!-- ============ LAVORI ============ -->
-    <section class="section works" id="lavori">
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" data-list="nastro"></div></div>
+
+    <section class="section">
       <div class="container">
-        <p class="eyebrow reveal">Selezione</p>
-        <h2 class="reveal">Lavori</h2>
-
-        <!-- MODIFICA: categorie (il valore data-filter deve coincidere con data-cat dei lavori) -->
-        <div class="filters reveal" role="group" aria-label="Filtra i lavori">
-          <button class="active" data-filter="all">Tutti</button>
-          <button data-filter="grafica">Grafica</button>
-          <button data-filter="eventi">Eventi</button>
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Esplora</p>
+            <h2>Da dove vuoi<br>iniziare?</h2>
+          </div>
         </div>
-
-        <!--
-          COME AGGIUNGERE UN LAVORO: copia un blocco <figure class="work"> e cambia:
-            data-cat   → grafica oppure eventi
-            data-title / data-meta / data-desc → titolo, anno·dettaglio, descrizione
-            <span class="work-images"> → una riga per ogni foto:
-                <img src="img/lavori/nome-1.jpg" alt="descrizione">
-              (la prima foto è la copertina; sostituisce i <div class="placeholder">)
-            <span class="badge"> → scrivi quante foto ci sono
-        -->
-        <div class="grid">
-          <figure class="work reveal" data-cat="grafica" data-title="Progetto grafico 1" data-meta="2025 · Identità visiva" data-desc="Breve descrizione del progetto grafico: cliente, idea e risultato.">
-            <button class="work-open" aria-label="Apri: Progetto grafico 1">
-              <span class="work-images">
-                <div class="placeholder ph-1"></div>
-                <div class="placeholder ph-3"></div>
-                <div class="placeholder ph-5"></div>
-                <div class="placeholder ph-2"></div>
-              </span>
-              <span class="badge">4 foto</span>
-            </button>
-            <figcaption><strong>Progetto grafico 1</strong><span>2025 · Identità visiva</span></figcaption>
-          </figure>
-
-          <figure class="work reveal tall" data-cat="eventi" data-title="Evento 1" data-meta="2025 · Luogo" data-desc="Breve descrizione dell'evento: dove, quando e qual è stato il tuo ruolo.">
-            <button class="work-open" aria-label="Apri: Evento 1">
-              <span class="work-images">
-                <div class="placeholder ph-2"></div>
-                <div class="placeholder ph-4"></div>
-                <div class="placeholder ph-6"></div>
-              </span>
-              <span class="badge">3 foto</span>
-            </button>
-            <figcaption><strong>Evento 1</strong><span>2025 · Luogo</span></figcaption>
-          </figure>
-
-          <figure class="work reveal" data-cat="grafica" data-title="Progetto grafico 2" data-meta="2024 · Packaging" data-desc="Breve descrizione del progetto grafico: cliente, idea e risultato.">
-            <button class="work-open" aria-label="Apri: Progetto grafico 2">
-              <span class="work-images">
-                <div class="placeholder ph-3"></div>
-                <div class="placeholder ph-1"></div>
-              </span>
-              <span class="badge">2 foto</span>
-            </button>
-            <figcaption><strong>Progetto grafico 2</strong><span>2024 · Packaging</span></figcaption>
-          </figure>
-
-          <figure class="work reveal" data-cat="eventi" data-title="Evento 2" data-meta="2024 · Luogo" data-desc="Breve descrizione dell'evento: dove, quando e qual è stato il tuo ruolo.">
-            <button class="work-open" aria-label="Apri: Evento 2">
-              <span class="work-images">
-                <div class="placeholder ph-4"></div>
-                <div class="placeholder ph-2"></div>
-                <div class="placeholder ph-5"></div>
-                <div class="placeholder ph-1"></div>
-                <div class="placeholder ph-3"></div>
-              </span>
-              <span class="badge">5 foto</span>
-            </button>
-            <figcaption><strong>Evento 2</strong><span>2024 · Luogo</span></figcaption>
-          </figure>
-
-          <figure class="work reveal tall" data-cat="grafica" data-title="Progetto grafico 3" data-meta="2023 · Editoria" data-desc="Breve descrizione del progetto grafico: cliente, idea e risultato.">
-            <button class="work-open" aria-label="Apri: Progetto grafico 3">
-              <span class="work-images">
-                <div class="placeholder ph-5"></div>
-                <div class="placeholder ph-6"></div>
-                <div class="placeholder ph-4"></div>
-              </span>
-              <span class="badge">3 foto</span>
-            </button>
-            <figcaption><strong>Progetto grafico 3</strong><span>2023 · Editoria</span></figcaption>
-          </figure>
-
-          <figure class="work reveal" data-cat="eventi" data-title="Evento 3" data-meta="2023 · Luogo" data-desc="Breve descrizione dell'evento: dove, quando e qual è stato il tuo ruolo.">
-            <button class="work-open" aria-label="Apri: Evento 3">
-              <span class="work-images">
-                <div class="placeholder ph-6"></div>
-              </span>
-              <span class="badge">1 foto</span>
-            </button>
-            <figcaption><strong>Evento 3</strong><span>2023 · Luogo</span></figcaption>
-          </figure>
+        <div class="doors">
+          <a class="door door-about reveal" href="chi-sono.html" data-tilt>
+            <span class="door-arrow">↗</span>
+            <span class="door-body"><strong>Chi sono</strong><span data-c="home.porta_chi_sono"></span></span>
+          </a>
+          <a class="door door-grafica reveal" href="lavori.html#grafica" data-tilt>
+            <span class="door-arrow">↗</span>
+            <span class="door-body"><strong>Grafica</strong><span data-c="home.porta_grafica"></span></span>
+          </a>
+          <a class="door door-eventi reveal" href="lavori.html#eventi" data-tilt>
+            <span class="door-arrow">↗</span>
+            <span class="door-body"><strong>Eventi</strong><span data-c="home.porta_eventi"></span></span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONTATTI ============ -->
-    <section class="section contact" id="contatti">
-      <div class="container narrow">
-        <p class="eyebrow reveal">Contatti</p>
-        <h2 class="reveal">Lavoriamo insieme</h2>
-        <p class="reveal">Hai un progetto in mente o vuoi semplicemente salutare? Scrivimi.</p>
-        <!-- MODIFICA: email e social -->
-        <a class="mail reveal" href="mailto:email@esempio.it">email@esempio.it</a>
-        <p class="socials reveal">
-          <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        </p>
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">In evidenza</p>
+            <h2>Lavori recenti</h2>
+          </div>
+          <a class="link-arrow" href="lavori.html">Tutti i lavori <span>→</span></a>
+        </div>
+        <div class="featured" data-list="featured"></div>
+      </div>
+    </section>
+
+    <section class="section cta-band">
+      <div class="container reveal">
+        <p class="eyebrow">Collaboriamo</p>
+        <h2 class="cta-title" data-c="home.cta_titolo">Hai un progetto in mente?</h2>
+        <a class="btn" href="contatti.html">Scrivimi <span class="arr">→</span></a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year">2026</span> Chiara Tangari — Tutti i diritti riservati</p>
-    <a href="#top">Torna su ↑</a>
+    <div class="footer-big" aria-hidden="true"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
+    <div class="footer-row container">
+      <p>© <span class="year">2026</span> <span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></p>
+      <nav aria-label="Menu secondario">
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="lavori.html">Lavori</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="#" class="to-top">Torna su ↑</a>
+    </div>
   </footer>
 
-  <!-- ============ LIGHTBOX ============ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-    <button class="lb-close" aria-label="Chiudi">×</button>
-    <button class="lb-nav lb-prev" aria-label="Precedente">‹</button>
-    <div class="lb-body">
-      <div class="lb-media"></div>
-      <div class="lb-info">
-        <h3 class="lb-title"></h3>
-        <p class="lb-meta"></p>
-        <p class="lb-desc"></p>
-        <div class="lb-thumbs"></div>
-        <div class="lb-works">
-          <button class="lb-wprev">← Lavoro precedente</button>
-          <button class="lb-wnext">Lavoro successivo →</button>
-        </div>
-      </div>
-    </div>
-    <button class="lb-nav lb-next" aria-label="Successivo">›</button>
-  </div>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/hero3d.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

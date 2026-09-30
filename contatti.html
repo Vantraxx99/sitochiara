@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contatti — Chiara Tangari</title>
+  <meta name="description" content="Contatta Chiara Tangari per eventi e progetti grafici.">
+  <meta property="og:title" content="Contatti — Chiara Tangari">
+  <meta property="og:description" content="Contatta Chiara Tangari per eventi e progetti grafici.">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contatti">
+
+  <div class="curtain" aria-hidden="true"><span>Chiara Tangari</span></div>
+
+  <header class="site-header">
+    <a class="logo" href="index.html"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span><span class="dot"></span></a>
+    <button class="nav-toggle" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" aria-label="Menu principale">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="chi-sono.html" data-nav="chi-sono">Chi sono</a>
+      <a href="lavori.html" data-nav="lavori">Lavori</a>
+      <a href="contatti.html" data-nav="contatti">Contatti</a>
+    </nav>
+  </header>
+
+  <!-- I testi e le foto si modificano dall'area admin (file in /content), non qui. -->
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="gyro" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container">
+        <p class="eyebrow">Contatti</p>
+        <h1 class="page-title" data-split><span data-c="contatti.titolo">Parliamo</span></h1>
+        <p class="page-intro" data-c="contatti.testo"></p>
+      </div>
+    </section>
+
+    <section class="section contact-section">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Scrivimi</p>
+          <a class="mail" href="mailto:" data-c-href="generale.email|mailto:"><span data-c="generale.email"></span></a>
+          <button class="copy" type="button" data-copy="generale.email">Copia indirizzo</button>
+          <ul class="socials">
+            <li><a href="#" data-c-href="generale.instagram" data-hide-empty target="_blank" rel="noopener">Instagram <span>↗</span></a></li>
+            <li><a href="#" data-c-href="generale.linkedin" data-hide-empty target="_blank" rel="noopener">LinkedIn <span>↗</span></a></li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">Disponibile per</p>
+          <ul class="avail" data-list="disponibile_per"></ul>
+          <p class="based">Base a <span data-c="generale.citta">Monza</span> · in tutta Italia e all'estero</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-big" aria-hidden="true"><span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></div>
+    <div class="footer-row container">
+      <p>© <span class="year">2026</span> <span data-c="generale.nome">Chiara</span> <span data-c="generale.cognome">Tangari</span></p>
+      <nav aria-label="Menu secondario">
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="lavori.html">Lavori</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+      <a href="#" class="to-top">Torna su ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

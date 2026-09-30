@@ -1,0 +1,55 @@
+{
+  "foto": "",
+  "intro": "Sono Chiara, event manager e designer. Organizzo eventi nazionali e internazionali e unisco il lavoro di coordinamento alla cura per il dettaglio visivo.",
+  "testo": "Mi sono formata in Interior Design al Politecnico di Milano. Ho lavorato nella comunicazione e negli eventi per aziende come Heineken Italia, BASF e Artemide, e oggi collaboro come freelance con realtà come WeRoad, WeMeet e Avis Monza. Mi trovo bene nei contesti dinamici, dove coordinamento, flessibilità e problem solving fanno la differenza.",
+  "formazione": "Laurea magistrale in Interior Design, Politecnico di Milano",
+  "lingue": "Italiano (madrelingua) · Inglese (professionale)",
+  "cosa_faccio": [
+    {
+      "titolo": "Organizzazione e coordinamento eventi",
+      "area": "Eventi"
+    },
+    {
+      "titolo": "Logistica, fornitori e gestione on-site",
+      "area": "Eventi"
+    },
+    {
+      "titolo": "Set design e allestimenti",
+      "area": "Eventi"
+    },
+    {
+      "titolo": "Identità visive e materiali stampati",
+      "area": "Grafica"
+    },
+    {
+      "titolo": "Presentazioni e grafica per eventi",
+      "area": "Grafica"
+    },
+    {
+      "titolo": "Comunicazione e social media",
+      "area": "Comunicazione"
+    }
+  ],
+  "clienti": [
+    "Heineken Italia",
+    "BASF Italia",
+    "Artemide",
+    "WeRoad",
+    "WeMeet",
+    "Havas PR",
+    "Sipcam Oxon",
+    "Avis Monza"
+  ],
+  "strumenti": [
+    "Illustrator",
+    "InDesign",
+    "Photoshop",
+    "AutoCAD",
+    "Cinema 4D",
+    "Vectorworks Spotlight",
+    "Canva",
+    "Eventee",
+    "Tito",
+    "MS Office"
+  ]
+}
