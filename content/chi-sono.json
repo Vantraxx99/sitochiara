@@ -1,7 +1,6 @@
 {
-  "foto": "",
-  "intro": "Sono Chiara, event manager e designer. Organizzo eventi nazionali e internazionali e unisco il lavoro di coordinamento alla cura per il dettaglio visivo.",
-  "testo": "Mi sono formata in Interior Design al Politecnico di Milano. Ho lavorato nella comunicazione e negli eventi per aziende come Heineken Italia, BASF e Artemide, e oggi collaboro come freelance con realtà come WeRoad, WeMeet e Avis Monza. Mi trovo bene nei contesti dinamici, dove coordinamento, flessibilità e problem solving fanno la differenza.",
+  "intro": "Sono Chiara, event manager e designer. Organizzo eventi, ma soprattutto faccio in modo che le cose funzionino e che chi le vive se le ricordi.",
+  "testo": "Ciao, sono Chiara!\n\nSono un'event manager con un'anima da designer: mi sono laureata in Interior Design e, strada facendo, ho scoperto che la mia passione sta proprio nel punto in cui l'organizzazione incontra la creatività. Fornitori, logistica, comunicazione: mi piace tenere insieme tutti i pezzi, senza perdere di vista i dettagli che fanno la differenza.\n\nHo lavorato in contesti molto diversi, dal design al largo consumo, dall'industria alle community e oggi mi occupo di eventi di ogni tipo, dalle fiere alle esperienze \"on the road\". Quando c'è da improvvisare, restare calma e trovare la soluzione giusta, mi sento nel mio elemento.\n\nMi puoi trovare anche con matita in mano: creo materiali di comunicazione e presentazioni, e continuo a formarmi per portare sempre più cura progettuale nei miei allestimenti. \nE se ti serve qualcuno che sappia raccontare un progetto sui social o in aula, ho insegnato anche comunicazione digitale!\n\nCredo che un buon evento sia fatto di organizzazione, estetica e un po' di cuore. \nSe stai cercando qualcuno che unisca queste tre cose, sono felice di conoscerti.",
   "formazione": "Laurea magistrale in Interior Design, Politecnico di Milano",
   "lingue": "Italiano (madrelingua) · Inglese (professionale)",
   "cosa_faccio": [
@@ -24,10 +23,6 @@
     {
       "titolo": "Presentazioni e grafica per eventi",
       "area": "Grafica"
-    },
-    {
-      "titolo": "Comunicazione e social media",
-      "area": "Comunicazione"
     }
   ],
   "clienti": [
@@ -35,9 +30,8 @@
     "BASF Italia",
     "Artemide",
     "WeRoad",
-    "WeMeet",
     "Havas PR",
-    "Sipcam Oxon",
+    "Sipcam",
     "Avis Monza"
   ],
   "strumenti": [
@@ -46,7 +40,6 @@
     "Photoshop",
     "AutoCAD",
     "Cinema 4D",
-    "Vectorworks Spotlight",
     "Canva",
     "Eventee",
     "Tito",
