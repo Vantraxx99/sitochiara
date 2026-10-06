@@ -1,61 +1,54 @@
 {
-  "intro": "Una selezione di eventi e progetti grafici. Clicca su un lavoro per vedere tutte le foto.",
+  "intro": "Una selezione di eventi e progetti grafici. Clicca su un lavoro per vedere più dettagli.",
   "lavori": [
     {
       "titolo": "Road to Summer",
       "categoria": "eventi",
       "anno": "2025",
       "dettaglio": "WeRoad · Marina di Ravenna",
-      "descrizione": "Coordinamento dello staff per l'evento estivo di WeRoad a Marina di Ravenna.",
-      "foto": []
+      "descrizione": "Coordinamento dello staff per l'evento estivo di WeRoad a Marina di Ravenna."
     },
     {
       "titolo": "Identità visiva",
       "categoria": "grafica",
       "anno": "2023 — oggi",
       "dettaglio": "Sipcam Oxon",
-      "descrizione": "Sviluppo dell'identità visiva e dei materiali stampati.",
-      "foto": []
+      "descrizione": "Sviluppo dell'identità visiva e dei materiali stampati."
     },
     {
       "titolo": "Eventi e comunicazione",
       "categoria": "eventi",
       "anno": "2024 — oggi",
       "dettaglio": "Avis Donatori di Sangue · Monza",
-      "descrizione": "Sviluppo di eventi, comunicazione coordinata del brand e gestione dei social media.",
-      "foto": []
+      "descrizione": "Sviluppo di eventi, comunicazione coordinata del brand e gestione dei social media."
     },
     {
       "titolo": "AI Week",
       "categoria": "eventi",
       "anno": "2025",
       "dettaglio": "Fiera · Milano",
-      "descrizione": "Staff manager alla fiera AI Week di Milano.",
-      "foto": []
+      "descrizione": "Staff manager alla fiera AI Week di Milano."
     },
     {
       "titolo": "Graphic design",
       "categoria": "grafica",
       "anno": "2023 — oggi",
       "dettaglio": "Havas PR",
-      "descrizione": "Progetti di graphic design e presentazioni.",
-      "foto": []
+      "descrizione": "Progetti di graphic design e presentazioni."
     },
     {
       "titolo": "Eventi WeMeet",
       "categoria": "eventi",
       "anno": "2025",
       "dettaglio": "WeMeet · Monza",
-      "descrizione": "Ideazione e organizzazione di eventi come Event Creator.",
-      "foto": []
+      "descrizione": "Ideazione e organizzazione di eventi come Event Creator."
     },
     {
       "titolo": "Rebranding e immagine coordinata",
       "categoria": "grafica",
       "anno": "2018 — 2021",
       "dettaglio": "Heineken Italia",
-      "descrizione": "Immagine coordinata e rebranding di prodotto, presentazioni e canali aziendali.",
-      "foto": []
+      "descrizione": "Immagine coordinata e rebranding di prodotto, presentazioni e canali aziendali."
     }
   ]
 }
