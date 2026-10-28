@@ -4,51 +4,85 @@
     {
       "titolo": "Road to Summer 2026",
       "categoria": "eventi",
-      "anno": "2025",
+      "anno": "2026",
       "dettaglio": "WeRoad · Marina di Ravenna",
-      "descrizione": "Coordinamento dello staff per l'evento estivo di WeRoad a Marina di Ravenna.\nCreazione grafica di tutti i materiali utilizzati."
+      "descrizione": "Evento sviluppato in contemporanea in tre location differenti in Italia. Ho gestito il coordinamento dello staff per l'evento a Punta di Marina di Ravenna che si snodava in tre campeggi differenti.\nPrima di tutto mi sono occupata anche della creazione grafica di tutti i materiali utilizzati nelle tre location, dai badge, i bracciali, i pass, le grafiche per il sito e per la app di gestione live delle attività, e così via, dando uniformità alla comunicazione.",
+      "foto": [
+        "img/uploads/img .jpg",
+        "img/uploads/IMG_7744.jpg",
+        "img/uploads/IMG_7745.jpg",
+        "img/uploads/IMG_7746.jpg",
+        "img/uploads/img 2.jpg",
+        "img/uploads/img 1.jpg",
+        "img/uploads/Screenshot 2026-10-28 alle 14.34.27.png"
+      ]
     },
     {
-      "titolo": "Identità visiva",
-      "categoria": "grafica",
-      "anno": "2023 — oggi",
-      "dettaglio": "Sipcam Oxon",
-      "descrizione": "Sviluppo dell'identità visiva e dei materiali stampati."
-    },
-    {
-      "titolo": "Eventi e comunicazione",
-      "categoria": "eventi",
-      "anno": "2024 — oggi",
-      "dettaglio": "Avis Donatori di Sangue · Monza",
-      "descrizione": "Sviluppo di eventi, comunicazione coordinata del brand e gestione dei social media."
-    },
-    {
-      "titolo": "AI Week",
+      "titolo": "Global Reunion WeRoad ",
       "categoria": "eventi",
       "anno": "2025",
-      "dettaglio": "Fiera · Milano",
-      "descrizione": "Staff manager alla fiera AI Week di Milano."
+      "dettaglio": "WeRoad"
     },
     {
-      "titolo": "Graphic design",
-      "categoria": "grafica",
-      "anno": "2023 — oggi",
-      "dettaglio": "Havas PR",
-      "descrizione": "Progetti di graphic design e presentazioni."
-    },
-    {
-      "titolo": "Eventi WeMeet",
+      "titolo": "Road to Summer 2025",
       "categoria": "eventi",
       "anno": "2025",
-      "dettaglio": "WeMeet · Monza",
-      "descrizione": "Ideazione e organizzazione di eventi come Event Creator."
+      "dettaglio": "WeRoad Movieland Caneva"
     },
     {
-      "titolo": "Rebranding e immagine coordinata",
-      "categoria": "grafica",
-      "anno": "2018 — 2021",
+      "titolo": "Roadshow e eventi territoriali - Lancio Revysion",
+      "categoria": "eventi",
+      "anno": "2022",
+      "dettaglio": "Basf Agricultural Solution",
+      "descrizione": "Gestione e organizzazione dell'intero lancio dalla comunicazione agli eventi."
+    },
+    {
+      "titolo": "Beer Attraction ",
+      "categoria": "eventi",
+      "anno": "2019 ",
+      "dettaglio": "Heineken Italia Rimini",
+      "descrizione": "Sviluppo dello stand e organizzazione delle giornate di evento"
+    },
+    {
+      "titolo": "Salone del Gusto ",
+      "categoria": "eventi",
+      "anno": "2018",
+      "dettaglio": "Heineken Italia ",
+      "descrizione": "Sviluppo dello stand e organizzazione delle giornate di evento"
+    },
+    {
+      "titolo": "Flagship La Strada",
+      "categoria": "eventi",
+      "anno": "2020",
+      "dettaglio": "Heineken Italia ",
+      "descrizione": "Sviluppo del progetto flagship e organizzazione dell'evento di apertura"
+    },
+    {
+      "titolo": "Floristeria Milano Design Week ",
+      "categoria": "eventi",
+      "anno": "2019",
+      "dettaglio": "Heineken Italia Milano",
+      "descrizione": "Ideazione e organizzazione dell'evento presso la Fabbrica del Vapore"
+    },
+    {
+      "titolo": "Redentore Venezia ",
+      "categoria": "eventi",
+      "anno": "2020",
       "dettaglio": "Heineken Italia",
-      "descrizione": "Immagine coordinata e rebranding di prodotto, presentazioni e canali aziendali."
+      "descrizione": "Organizzazione dell'evento"
+    },
+    {
+      "titolo": "Convention Lagunitas Italia",
+      "categoria": "eventi",
+      "anno": "2019",
+      "dettaglio": "Heineken Italia",
+      "descrizione": "Sviluppo e organizzazione delle giornate di evento"
+    },
+    {
+      "titolo": "Avis Donatori di Sangue",
+      "categoria": "eventi",
+      "anno": "2024 ad oggi",
+      "dettaglio": "Avis Monza"
     }
   ]
 }
